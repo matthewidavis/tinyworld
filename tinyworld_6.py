@@ -313,6 +313,7 @@ def main_capture():
 
     # 2) Place partial coverage into full 360x180 equirect
     full_equi = place_partial_in_full_equirect(partial_pano)
+    full_equi = cv2.flip(full_equi, 0)
     cv2.imwrite("full_equirect.jpg", full_equi)
     cv2.imshow("Full Equirect (2to1) with partial coverage", full_equi)
     cv2.waitKey(0)
